@@ -4,9 +4,9 @@
 DROP TRIGGER IF EXISTS check_valid_email
 DELIMITER $$
 
-CREATE TRIGGER IF NOT EXISTS check_valid_email
-  BEFORE UPDATE ON users
-  FOR EACH ROW
+CREATE TRIGGER  check_valid_email
+BEFORE UPDATE ON users
+FOR EACH ROW
   BEGIN
     IF OLD.email != NEW.email
     THEN
