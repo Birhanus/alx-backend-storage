@@ -4,7 +4,7 @@
 import pymongo
 
 
-def list_all(mongo_collections):
+def list_all(mongo_collection):
     """ List all documents in a collection  """
-    for x in mongo_collections.find():
+    for x in mongo_collection.find():
         return [x]
