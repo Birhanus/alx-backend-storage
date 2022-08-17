@@ -8,8 +8,8 @@ class Cache:
     """A Cache class"""
     def __init__(self):
         """store an instance of the Redis client as a private variable"""
-        self.__redis = redis.Redis()
-        self.__redis.flushdb
+        self._redis = redis.Redis()
+        self._redis.flushdb(True)
 
     def store(self, data):
         """takes data argument and retuns a string .
@@ -17,5 +17,5 @@ class Cache:
         and store the input data in Redis using the random key
         and return the kety"""
         random_key = str(uuid4())
-        self.__redis.set(random_key, data)
+        self._redis.set(random_key, data)
         return random_key
