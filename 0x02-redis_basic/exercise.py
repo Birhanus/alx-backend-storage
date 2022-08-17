@@ -2,7 +2,7 @@
 """Writing stringa to Redis"""
 from uuid import uuid4
 import redis
-
+from tyoing import Union, Any, Callable
 
 class Cache:
     """A Cache class"""
