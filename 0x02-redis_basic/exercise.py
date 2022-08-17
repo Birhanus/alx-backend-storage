@@ -6,12 +6,12 @@ import redis
 
 class Cache:
     """A Cache class"""
-    def __init__(self):
+    def __init__(self) -> None:
         """store an instance of the Redis client as a private variable"""
         self._redis = redis.Redis()
         self._redis.flushdb(True)
 
-    def store(self, data):
+    def store(self, data: Union[str, bytes, int, float]) -> str:
         """takes data argument and retuns a string .
         The method should generate a random key(eg using uuid)
         and store the input data in Redis using the random key
